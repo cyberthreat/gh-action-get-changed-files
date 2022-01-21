@@ -134,7 +134,8 @@ async function processCommitData(result) {
 		}
 
 		if (isRenamed(file)) {
-			FILES_RENAMED.add([file.previous_filename, file.filename]);
+			FILES_RENAMED.add(file.previous_filename);
+			FILES_RENAMED.add(file.filename);
 		}
 	});
 }
