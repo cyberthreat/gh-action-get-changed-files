@@ -134,6 +134,8 @@ async function processCommitData(result) {
 		}
 
 		if (isRenamed(file)) {
+			console.log('Previous Filename: ${file.previous_filename}');
+			console.log('New Filename: ${file.filename}');
 			FILES_RENAMED.add(file.previous_filename);
 			FILES_RENAMED.add(file.filename);
 		}
