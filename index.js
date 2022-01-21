@@ -134,11 +134,12 @@ async function processCommitData(result) {
 		}
 
 		if (isRenamed(file)) {
-			processRenamedFile(file.previous_filename, file.filename);
+			FILES_RENAMED.add([file.previous_filename, file.filename]);
 		}
 	});
 }
 
+// not used
 function processRenamedFile(prev_file, new_file) {
 	FILES.delete(prev_file) && FILES.add(new_file);
 	FILES_ADDED.delete(prev_file) && FILES_ADDED.add(new_file);
